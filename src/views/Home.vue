@@ -2,10 +2,12 @@
 import titulo from '@/assets/img/title.png';
 import Boton from '@/components/Boton.vue';
 import coco from '@/assets/img/coco2.png';
+import Spinner from '@/components/Spinner.vue';
 export default {
     name:'home',
     components:{
-        Boton
+        Boton,
+        Spinner
     },
     data(){
         return{
@@ -14,15 +16,16 @@ export default {
         }
     },methods:{
         enterInvitation(){
-                this.$router.push({
-                    name: 'invitacion'
-                });
+            this.$router.push({
+                name: 'invitacion'
+            });
         }
     }
 }
 </script>
 <template>
-    <div class="home_container box">
+   <div class="home_container box">
+    <Spinner/>
         <div class="container__title">
             <img :src="titulo" class="img__title" alt="titulo">
         </div>
@@ -32,8 +35,10 @@ export default {
             <img :src="coco" class="img_coco2" alt="coco">
         </div>
         </div>
+        <Spinner/>
     </div>
-</template>
+  </template>
+  
 <style>
 .home_container{
     width: 100%;
@@ -41,6 +46,7 @@ export default {
     background-image: url(../assets/img/fondo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 .box{
     display: flex;
