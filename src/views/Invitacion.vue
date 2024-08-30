@@ -5,12 +5,13 @@ import imagen3 from '@/assets/img/coco_y_chorizo.png';
 import Timer from '@/components/Timer/Timer.vue';
 import Boton from '@/components/Boton.vue';
 import PopupLocalizacion from '@/components/PopupLocalizacion.vue';
+import logo from '@/assets/img/logo.png';
 export default {
     name: 'invitacion',
     components: {
         Timer,
         Boton,
-        PopupLocalizacion 
+        PopupLocalizacion
     },
     data() {
         return {
@@ -21,13 +22,14 @@ export default {
             title: 'FIESTA',
             titlec: 'Compartimos este día junto a vos',
             subtitle: 'Compartí tus fotos y videos de ese hermoso día',
-            popup:false
+            popup: false,
+            logo
         }
     },
     methods: {
-        togglePopUp(){
+        togglePopUp() {
             this.popup = !this.popup
-        }        
+        }
     }
 }
 </script>
@@ -52,22 +54,34 @@ export default {
                 salón de Pita.</p>
         </div>
         <div class="container__button">
-            <PopupLocalizacion v-show="popup" @close="togglePopUp()"/>
-            <Boton label="ENCENDER GPS" customClass="btn-mayor" @click="togglePopUp()"/>
+            <PopupLocalizacion v-show="popup" @close="togglePopUp()" />
+            <Boton label="ENCENDER GPS" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
-        
-        <div class="mensaje_comercial">
-            <h1 class="msj1">{{ titlec }}</h1>
-            <p class="msj2">{{ subtitle }}</p>
+
+        <div class="box__footer">
+            <div class="mensaje_comercial">
+                <h1 class="msj1">{{ titlec }}</h1>
+                <p class="msj2">{{ subtitle }}</p>
+                
+                <div class="container__button">
+                    <PopupLocalizacion v-show="popup" @close="togglePopUp()" />
+                    <h1 class="opcion__footer" @click="togglePopUp()">ENCENDER GPS</h1>
+                </div>
+                <img :src="logo" alt="logo">
+                
+            </div>
             <div class="footer">
-                <div class="text_desarrolladores">
-                    <p class="dev1">Develop by</p>
-                    <p class="dev2">Teinvite.io</p>
+                <div class="container__footer">
+                    <div class="text_desarrolladores">
+                        <p class="dev1">Develop by</p>
+                        <p class="dev2">Teinvite.io</p>
+                        <a href="https://www.instagram.com/teinviteok/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram icon"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        
-
     </div>
 </template>
 <style>
@@ -165,7 +179,8 @@ export default {
     display: flex;
     justify-content: center;
 }
-.container__button{
+
+.container__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,29 +190,54 @@ export default {
     font-family: Montserrat;
     font-weight: normal;
     font-size: 14px;
-    color: var(--color-font-secondar);
+    color: black;
     text-align: center;
     line-height: 100%;
+}
+
+.box__footer {
+    margin-top: 2.5rem;
+    width: 100%;
 }
 
 .mensaje_comercial {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:4rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 .footer {
-    width: 100%;
-    height: 25px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
-    margin-top:1rem;
+    width: 100%;
+    height: 65px;
+    background: var(--color-font-secondar);
+}
+
+.container__footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.opcion__footer {
+    font-family: Rockwell-Regular;
+    color: var(--color-font);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.opcion__footer:hover {
+    text-decoration: underline;
 }
 
 .text_desarrolladores {
@@ -207,25 +247,34 @@ export default {
     justify-content: center;
     align-items: center;
     font-family: Montserrat;
-    margin-top:1.5rem;
+    margin-top: 1.5rem;
 }
-.msj1{
+
+.msj1 {
     color: var(--color-counter1);
-    font-family:Montserrat;
+    font-family: Montserrat;
     text-align: center;
     font-size: 14px;
 }
-.msj2{
+
+.msj2 {
     color: var(--color-font-secondar);
     font-family: Montserrat;
     text-align: center;
     font-size: 11px;
-    line-height: 100%;
+    line-height: 80%;
 }
-.dev1{
-    color: var(--color-font-secondar);
+.icon{
+    color:var(--color-font);
+    font-size: 1.5rem;
+    margin-bottom:1rem;
+    margin-left: .5rem;
 }
-.dev2{
-    color:black;
+.dev1 {
+    color: white;
+}
+
+.dev2 {
+    color: black;
 }
 </style>

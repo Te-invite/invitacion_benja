@@ -1,17 +1,17 @@
 <script>
-import Boton from './Boton.vue';
 import PopupBase from './PopupBase.vue';
+import Boton from './Boton.vue';
 export default {
     components: { 
-       PopupBase,
-       Boton
+        PopupBase,
+        Boton
     },
     data() {
         return {
         infoBtn: '¿CÓMO LLEGAR?',
         modalTitle: 'Cómo llegar a la Fiesta',
         map: 'ABRIR APP',
-        mapUrl:'https://maps.app.goo.gl/RMnUo7bMcJN1auvZ9'
+        mapUrl:'https://maps.app.goo.gl/f2j4PYsgmVTJ1P6QA'
         };
     }, 
     methods:{
@@ -25,25 +25,22 @@ export default {
     <popup-base :title="modalTitle" >
         <div class="modal-body">
             <div class="map-container">
-                <iframe class="map"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10590.848034586641!2d-60.1009674!3d-38.0265963!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9592313fa2c85eff%3A0x5b1253cccbb79323!2sEstadio%20de%20Independencia!5e1!3m2!1ses-419!2sar!4v1724707269785!5m2!1ses-419!2sar" 
-                width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                <iframe class="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3142.610837648265!2d-60.1006553241042!3d-38.03285107192159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9592311e20184ea5%3A0x9e747032d11e3a61!2sLa%20Cascada%20Eventos%20Adolfo%20Gonzales%20Chaves!5e0!3m2!1ses-419!2sar!4v1717480729319!5m2!1ses-419!2sar"
-                width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe class="map" 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2649.854893578286!2d-60.414899000000005!3d-37.967261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDU4JzAyLjEiUyA2MMKwMjQnNTMuNiJX!5e1!3m2!1ses-419!2sar!4v1725047778328!5m2!1ses-419!2sar" 
+                width="200" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
             </div>
         </div>
         <template #footer>
-            <Boton label="ABRIR APP" customClass="btn-mayor" @click="openMap()" />
+            <Boton label="ENCENDER GPS" customClass="btn-mayor" @click="openMap()" />
         </template>
     </popup-base>
 </template>
 
 <style scoped> 
-
+.map-container{
+    margin-bottom:1rem;
+}
 .map{
     width:240px;
     height:100px;

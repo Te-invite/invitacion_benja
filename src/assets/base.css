@@ -19,6 +19,10 @@
   font-family: 'Rockwell-Regular';
   src: url('./font/ROCK.TTF') format('opentype');
 }
+@font-face {
+  font-family: 'Northwell';
+  src: url('./font/Northwell.otf') format('opentype');
+}
 *{
   margin: 0;
   border: 0;
@@ -27,6 +31,6 @@
 }
 body{
   width: 100%;
-  min-height:100vh;
+  height:100%;
   overflow: hidden;
 }
