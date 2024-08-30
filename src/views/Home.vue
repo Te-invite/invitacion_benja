@@ -1,4 +1,5 @@
 <script>
+
 import titulo from '@/assets/img/title.png';
 import Boton from '@/components/Boton.vue';
 import coco from '@/assets/img/coco2.png';
@@ -12,7 +13,8 @@ export default {
             titulo,
             coco
         }
-    },methods:{
+    },
+    methods:{
         enterInvitation(){
             this.$router.push({
                 name: 'invitacion'
