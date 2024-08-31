@@ -10,55 +10,56 @@
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitacion Benja</title>
   <style>
     .animation__heart {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 100%;
-      margin: 40%;
-    }
-    .text{
-      font-family: Northwell;
-      font-size: 2rem;
-      text-align: center;
-    }
-    #heart {
-      width: 100px;
-      height: 100px;
-      fill: red;
-      animation: 2.5s ease 0s infinite beat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    margin: 40%;
+  }
+  .text{
+    font-family: Northwell;
+    font-size: 2rem;
+    text-align: center;
+  }
+  #heart {
+    width: 100px;
+    height: 100px;
+    fill: red;
+    animation: 2.5s ease 0s infinite beat;
 
+  }
+
+  @keyframes beat {
+
+    /*Animacion del corazon*/
+    0%,
+    50%,
+    100% {
+      transform: scale(1, 1);
     }
 
-    @keyframes beat {
-
-      /*Animacion del corazon*/
-      0%,
-      50%,
-      100% {
-        transform: scale(1, 1);
-      }
-
-      30%,
-      80% {
-        transform: scale(0.92, 0.95);
-      }
+    30%,
+    80% {
+      transform: scale(0.92, 0.95);
     }
+  }
   </style>
+  <title>Invitacion Benja</title>
 </head>
 
 <body>
   <div id="app"></div>
-  <div class="animation__heart">
+  <div id="progres" class="animation__heart">
     <svg id="heart" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M37.5 15.9375C37.5 26.875 21.2828 35.7281 20.5922 36.0938C20.4102 36.1917 20.2067 36.2429 20 36.2429C19.7933 36.2429 19.5898 36.1917 19.4078 36.0938C18.7172 35.7281 2.5 26.875 2.5 15.9375C2.50289 13.3691 3.52447 10.9067 5.3406 9.0906C7.15673 7.27447 9.6191 6.25289 12.1875 6.25C15.4141 6.25 18.2391 7.6375 20 9.98281C21.7609 7.6375 24.5859 6.25 27.8125 6.25C30.3809 6.25289 32.8433 7.27447 34.6594 9.0906C36.4755 10.9067 37.4971 13.3691 37.5 15.9375Z" />
     </svg>
   </div>
+  
   <script type="module" src="/src/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

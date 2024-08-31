@@ -20,8 +20,6 @@ export default {
             imagen3,
             descripcion: '¡CUMPLO 3 AÑOS Y TE INVITÓ A FESTEJAR CONMIGO!',
             title: 'FIESTA',
-            titlec: 'Compartimos este día junto a vos',
-            subtitle: 'Compartí tus fotos y videos de ese hermoso día',
             popup: false,
             logo
         }
@@ -60,13 +58,6 @@ export default {
 
         <div class="box__footer">
             <div class="mensaje_comercial">
-                <h1 class="msj1">{{ titlec }}</h1>
-                <p class="msj2">{{ subtitle }}</p>
-                
-                <div class="container__button">
-                    <PopupLocalizacion v-show="popup" @close="togglePopUp()" />
-                    <h1 class="opcion__footer" @click="togglePopUp()">ENCENDER GPS</h1>
-                </div>
                 <img :src="logo" alt="logo">
                 
             </div>
@@ -203,12 +194,11 @@ export default {
 .mensaje_comercial {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 .footer {
