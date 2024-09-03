@@ -6,12 +6,14 @@ import Timer from '@/components/Timer/Timer.vue';
 import Boton from '@/components/Boton.vue';
 import PopupLocalizacion from '@/components/PopupLocalizacion.vue';
 import logo from '@/assets/img/logo.png';
+import SectionFooterVue from '@/components/SectionFooter.vue';
 export default {
     name: 'invitacion',
     components: {
         Timer,
         Boton,
-        PopupLocalizacion
+        PopupLocalizacion,
+        SectionFooterVue
     },
     data() {
         return {
@@ -55,8 +57,12 @@ export default {
             <PopupLocalizacion v-show="popup" @close="togglePopUp()" />
             <Boton label="ENCENDER GPS" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
-
         <div class="box__footer">
+            <SectionFooterVue/>
+        </div>
+
+
+        <!-- <div class="box__footer">
             <div class="mensaje_comercial">
                 <img :src="logo" alt="logo">
                 
@@ -72,7 +78,7 @@ export default {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <style>
@@ -175,6 +181,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: .5rem;
 }
 
 .evento {
@@ -187,84 +194,10 @@ export default {
 }
 
 .box__footer {
-    margin-top: 2.5rem;
-    width: 100%;
-}
-
-.mensaje_comercial {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-.footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background: var(--color-font-secondar);
-}
-
-.container__footer {
+    margin-top:1rem;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
-.opcion__footer {
-    font-family: Rockwell-Regular;
-    color: var(--color-font);
-    font-size: 11px;
-    cursor: pointer;
-}
 
-.opcion__footer:hover {
-    text-decoration: underline;
-}
-
-.text_desarrolladores {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: Montserrat;
-    margin-top: 1.5rem;
-}
-
-.msj1 {
-    color: var(--color-counter1);
-    font-family: Montserrat;
-    text-align: center;
-    font-size: 14px;
-}
-
-.msj2 {
-    color: var(--color-font-secondar);
-    font-family: Montserrat;
-    text-align: center;
-    font-size: 11px;
-    line-height: 80%;
-}
-.icon{
-    color:var(--color-font);
-    font-size: 1.5rem;
-    margin-bottom:1rem;
-    margin-left: .5rem;
-}
-.dev1 {
-    color: white;
-}
-
-.dev2 {
-    color: black;
-}
 </style>
