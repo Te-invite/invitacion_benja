@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite --base=/invitacion_benja build",
     "preview": "vite preview"
   },
   "dependencies": {
