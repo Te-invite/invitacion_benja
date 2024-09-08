@@ -20,8 +20,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-# Este valor se usa para generar la navegación interna del sitio
-url: https://teinvite.ar
+
     - name: Instalar node
       uses: actions/setup-node@v4
     - run: npm ci
