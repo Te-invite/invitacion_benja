@@ -29,5 +29,12 @@ jobs:
       uses: actions/upload-pages-artifact@v3.0.1
       with:
         path: ./dist
-    - name: Despliegue de la app
-      uses: actions/deploy-pages@v4.0.5
+  deploy:
+      environment:
+        name: github-pages
+        url: https://www.teinvite.ar  # Tu dominio personalizado
+      needs: build  # Ejecuta el trabajo de despliegue después del build
+      runs-on: ubuntu-latest
+      steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4.0.5
