@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite --base=https://teinvite.ar",
     "preview": "vite preview"
   },
   "dependencies": {
